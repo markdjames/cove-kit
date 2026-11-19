@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" uid="uid://do14x37gygkiq" path="res://cove_kit/pirate.gd" id="1_pirate"]
+[ext_resource type="Script" uid="uid://cr2oi8y1jwkya" path="res://cove_kit/speech_bubble.gd" id="2_bubble"]
+[ext_resource type="Texture2D" uid="uid://ti86soacnxk7" path="res://cove_kit/emmy/waiting.svg" id="3_waiting"]
+
+[node name="Pirate" type="Control"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -440.0
+offset_right = 368.0
+grow_vertical = 0
+pivot_offset = Vector2(0, 440)
+mouse_filter = 2
+script = ExtResource("1_pirate")
+
+[node name="Figure" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -275.0
+offset_right = 230.0
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("3_waiting")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Bubble" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+mouse_filter = 2
+theme_type_variation = &"SpeechBubble"
+script = ExtResource("2_bubble")
+
+[node name="Text" type="Label" parent="Bubble"]
+layout_mode = 2
+theme_type_variation = &"SpeechBubbleText"
